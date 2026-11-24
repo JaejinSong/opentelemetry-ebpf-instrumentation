@@ -4,7 +4,7 @@ WORKDIR /app
 COPY internal/test/integration/components/php/symfony/composer.json internal/test/integration/components/php/symfony/composer.lock ./
 RUN composer install --no-dev --no-interaction --no-scripts --prefer-dist
 
-FROM php:8.5.8-fpm@sha256:0dc450d0a0e81ba501973b8e303f5d45af2ed989e08730f597d8fc07fb289efd
+FROM php:8.6.0-fpm@sha256:23da58abd99055b97191fcca104126d552cc7b96c8cfe25f724311d52635696d
 
 WORKDIR /var/www/symfony
 COPY --from=dependencies /app/vendor ./vendor
